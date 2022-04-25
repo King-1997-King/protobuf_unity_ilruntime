@@ -8,3 +8,4 @@
 2. 在生成ilruntime appDomain的地方加入代码:  ProtobufIMessageAdaptor.appDomain = appDomain;
 3. 在注册委托的地方加入代码:  app.DelegateManager.RegisterFunctionDelegate<Google.Protobuf.ProtobufIMessageAdaptor.Adaptor>();
 4. 在注册适配器的地方加入代码:   app.RegisterCrossBindingAdaptor(new ProtobufIMessageAdaptor());
+5. 可以愉快并且没有限制的使用了 ~^0^~
