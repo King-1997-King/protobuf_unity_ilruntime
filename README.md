@@ -1,0 +1,2 @@
+# protobuf_unity_ilruntime
+可用于unity ilruntime使用的基于官方3.12.4版本的protobuf
