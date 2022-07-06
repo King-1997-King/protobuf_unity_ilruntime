@@ -1,25 +1,15 @@
 {
-  "name": "com.mj.Protobuf",
-  "displayName": "Protobuf",
+  "name": "com.MJ.ILruntime_Protobuf",
+  "displayName": "ILruntime_Protobuf",
   "version": "1.0.0",
-  "date": "20220616",
-  "checkdate": "20220616",
-  "desc": "支持ilruntime的Protobuf",
   "unity": "2018.3",
   "description": "支持ilruntime的Protobuf 123545",
   "keywords": [
     "protobuf",
     "ilruntime"
   ],
-  "category": "serialization",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/King-1997-King/protobuf_unity_ilruntime.git"
-  },
-  "author": "mj",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/King-1997-King/protobuf_unity_ilruntime/issues"
-  },
-  "homepage": "https://github.com/King-1997-King/protobuf_unity_ilruntime"
+  "author": "MJ",
+  "dependencies": {
+    "com.ourpalm.ilruntime": "2.0.0"
+  }
 }
