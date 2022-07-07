@@ -240,7 +240,8 @@ namespace Google.Protobuf.Reflection
                     IMethod ilMethod = (ilMethodInfo.ReflectedType as ILRuntimeType).ILType.GetMethod(ilMethodInfo.Name);
                     return message =>
                     {
-                        return ProtobufIMessageAdaptor.appDomain.Invoke(ilMethod, (message as ProtobufIMessageAdaptor.Adaptor).ILInstance);
+                        ProtobufIMessageAdaptor.Adaptor adaptor = message as ProtobufIMessageAdaptor.Adaptor;
+                        return adaptor.appDomain.Invoke(ilMethod, adaptor.ILInstance);
                     };
                 }
                 else
@@ -257,7 +258,8 @@ namespace Google.Protobuf.Reflection
                     IMethod ilMethod = (ilMethodInfo.ReflectedType as ILRuntimeType).ILType.GetMethod(ilMethodInfo.Name);
                     return (message, arg) =>
                     {
-                        ProtobufIMessageAdaptor.appDomain.Invoke(ilMethod, (message as ProtobufIMessageAdaptor.Adaptor).ILInstance, arg);
+                        ProtobufIMessageAdaptor.Adaptor adaptor = message as ProtobufIMessageAdaptor.Adaptor;
+                        adaptor.appDomain.Invoke(ilMethod, adaptor.ILInstance, arg);
                     };
                 }
                 else

@@ -118,7 +118,7 @@ namespace Google.Protobuf.Reflection
                 object defaultValue =
                     clrType == typeof(string) ? ""
                     : clrType == typeof(ByteString) ? ByteString.Empty
-                    : (clrType is ILRuntimeType) ? ProtobufIMessageAdaptor.appDomain.Instantiate(clrType.FullName)
+                    : (clrType is ILRuntimeType) ? (clrType as ILRuntimeType).ILType.Instantiate()
                     : Activator.CreateInstance(clrType);
                 clearDelegate = message => SetValue(message, defaultValue);
             }

@@ -11,8 +11,6 @@ namespace Google.Protobuf
 {
     public class ProtobufIMessageAdaptor : CrossBindingAdaptor
     {
-        public static AppDomain appDomain { get; set; }
-
         public override Type BaseCLRType => typeof(IMessage<ILTypeInstance>);
 
         public override Type AdaptorType => typeof(Adaptor);
@@ -25,6 +23,10 @@ namespace Google.Protobuf
         public class Adaptor : IMessage<Adaptor>, CrossBindingAdaptorType
         {
             private AppDomain appdomain;
+            public AppDomain appDomain
+            {
+                get => appdomain;
+            }
             private ILTypeInstance instance;
 
             public Adaptor()
@@ -43,7 +45,7 @@ namespace Google.Protobuf
             {
                 get
                 {
-                    return (MessageDescriptor) appDomain.Invoke(instance.Type.FullName, "get_Descriptor", null, null);
+                    return (MessageDescriptor)appdomain.Invoke(instance.Type.FullName, "get_Descriptor", null, null);
 
                     //if (_Descriptor == null)
                     //{
@@ -112,7 +114,7 @@ namespace Google.Protobuf
                 {
                     _MergeFrom = instance.Type.GetMethod("MergeFrom", new List<IType>()
                     {
-                        appDomain.GetType(typeof(CodedInputStream))
+                        appdomain.GetType(typeof(CodedInputStream))
                     }, null);
                 }
 
