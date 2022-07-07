@@ -3,7 +3,7 @@
   "displayName": "ILruntime_Protobuf",
   "version": "1.0.0",
   "unity": "2018.3",
-  "description": "支持ilruntime的Protobuf 123545",
+  "description": "支持ilruntime的Protobuf",
   "keywords": [
     "protobuf",
     "ilruntime"
