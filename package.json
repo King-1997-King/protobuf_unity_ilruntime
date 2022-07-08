@@ -2,8 +2,8 @@
   "name": "com.mj.protobuf_ilruntime",
   "displayName": "Protobuf_ILruntime",
   "version": "1.0.0",
-  "unity": "2018.3",
-  "description": "支持ilruntime的Protobuf",
+  "unity": "2018.1",
+  "description": "支持ilruntime的Protobuf。\nProtobuf由官方3.12.4版本修改。\nProtoc 3.12.4版本下载地址 https://github.com/protocolbuffers/protobuf/releases/tag/v3.12.4",
   "keywords": [
     "protobuf",
     "ilruntime"
@@ -11,5 +11,12 @@
   "author": "MJ",
   "dependencies": {
     "com.ourpalm.ilruntime": "2.0.0"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Test",
+      "description": "测试场景",
+      "path": "Samples~/Test"
+    }
+  ]
 }

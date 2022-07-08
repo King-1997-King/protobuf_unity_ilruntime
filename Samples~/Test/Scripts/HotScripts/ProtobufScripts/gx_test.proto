@@ -1,0 +1,44 @@
+syntax = "proto3";
+package gx_test;
+
+message gx_data{
+
+	double sc_double = 1;
+	float sc_float = 2;
+	int32 sc_int32 = 3;
+	int64 sc_int64 = 4; //long
+	uint32 sc_uint32 = 5;
+	uint64 sc_uint64 = 6; //ulong
+	sint32 sc_sint32 = 7;
+	sint64 sc_sint64 = 8;
+	fixed32 sc_fixed32 = 9;
+	fixed64 sc_fixed64 = 10;
+	sfixed32 sc_sfixed32 = 11;
+	sfixed64 sc_sfixed64 = 12;
+	bool sc_bool = 13;
+	string sc_string = 14;
+	bytes sc_bytes = 15;
+	repeated majun mj = 16;
+	mjEnum enm = 17;
+}
+
+message majun{
+	repeated float f =1;
+	int32 i = 2;
+	map<int32, val> m = 3;
+}
+
+message val{
+	int32 a=1;
+	string b = 2;
+}
+
+enum mjEnum{
+	UNIVERSAL = 0;
+    WEB = 1;
+    IMAGES = 2;
+    LOCAL = 3;
+    NEWS = 4;
+    PRODUCTS = 5;
+    VIDEO = 6;
+}
